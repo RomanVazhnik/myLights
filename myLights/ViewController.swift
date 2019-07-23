@@ -17,12 +17,16 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let radius = redView.frame.width / 2 // радиус для округления
+        settingToButton() // настройка вида myButton
+        self.view.backgroundColor = .black
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let radius = redView.frame.size.width / 2 // радиус для округления, т.к в viewDidLoad я бы получил размер оригинала
         settingToViews(redView, UIColor.red, radius) // RedView
         settingToViews(yellowView, UIColor.yellow, radius) // YellowView
         settingToViews(greenView, UIColor.green, radius) //GreenView
-        settingToButton() // настройка вида myButton
-        self.view.backgroundColor = .black
     }
     
     //Mark: - action кнопки
